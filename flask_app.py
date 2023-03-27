@@ -1,7 +1,14 @@
 from flask import Flask, render_template, request
 import json
+import sqlite3
 
 app = Flask(__name__)
+
+con = sqlite3.connect("mittaukset.db3")
+cur = con.cursor()
+cur.execute("CREATE TABLE IF NOT EXISTS mittaukset (id INTEGER PRIMARY KEY, paiva INTEGER, mittaus INTEGER)")
+con.commit()
+con.close
 
 lampotilat = [
     {'x':1, 'y':14},
