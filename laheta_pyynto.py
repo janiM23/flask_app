@@ -9,5 +9,5 @@ while(True):
 
     viesti = json.dumps(mittaus)
     # /api on mistä voi tarkastella. /lisaa jos halutaan survoa tietoa johonkin
-    vastaus = requests.post('http://127.0.0.1:5000/lisaa', data=viesti)
+    vastaus = requests.post('http://127.0.0.1:5000/lisaakantaan', data=viesti)
 
